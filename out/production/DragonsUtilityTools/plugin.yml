@@ -1,0 +1,41 @@
+name: DragonsUtilityTools
+
+main: me.dragonhuntrrr.DragonsUtilityTools.Main
+
+author: Dragonhuntrrr
+
+version: 1.0.0
+
+commands:
+  nickname:
+    description: Set a nickname
+    aliases:
+      - nick
+
+
+permissions:
+  utilityTools.*:
+    description: Gives all permissions, careful
+    children:
+      utilityTools.nick.*: true
+
+  utilityTools.nick.*:
+    description: Permission to nick
+    default: op
+    children:
+      utilityTools.nick.set: true
+      utilityTools.nick.remove: true
+      utilityTools.nick.override: true
+      utilityTools.nick.colorcodes: true
+
+  utilityTools.nick.set:
+    description: Set nickname
+
+  utilityTools.nick.remove:
+    description: Remove nickname
+
+  utilityTools.nick.override:
+    description: Override an existing name
+
+  utilityTools.nick.colorcodes:
+    description: Use bukkit colorcodes in your nickname
